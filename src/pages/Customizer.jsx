@@ -1,0 +1,20 @@
+import React, { useEffect, useState } from "react";
+import { AnimatePresence,motion } from "framer-motion";
+import { useSnapshot } from "valtio";
+import state from "../store";
+import { download } from "../assets";
+import { downloadCanvasToImage, reader } from "../config/helpers";
+import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants"
+import { fadeAnimation, slideAnimation } from '../config/motion';
+import { AIPicker, ColorPicker, FilePicker, Tab, CustomButton} from "../components"
+
+const Customizer = () => {
+  const snap = useSnapshot(state);
+  return (
+    <AnimatePresence>
+      { !snap.intro && (<>Costumizer</>)}
+    </AnimatePresence> 
+  )
+}
+
+export default Customizer
